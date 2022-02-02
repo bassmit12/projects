@@ -90,6 +90,10 @@ body {
   </form>
 </div>
 
+<div id="xampp">
+  <button class="openbtn" href="https://www.apachefriends.org/index.html" >Open Sidebar</button>  
+  <h2>Settings</h2>
+
 <script>
 function openNav() {
   document.getElementById("mySidebar").style.width = "250px";
