@@ -90,7 +90,7 @@ body {
   <h2>Download Xampp</h2>
   <a href="https://www.apachefriends.org/index.html" class="btn btn-primary">Download Xampp</a>
   <h2>Github</h2>
-  <a href="https://github.com/bassmit12/projects/tree/main/meesterproef/files" class="btn btn-primary">Download Xampp</a>
+  <a href="https://github.com/bassmit12/projects/tree/main/meesterproef/files" class="btn btn-primary">Download files from github</a>
   </form>
 </div>
 
