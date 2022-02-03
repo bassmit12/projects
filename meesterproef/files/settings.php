@@ -87,6 +87,10 @@ body {
   <p>Here you can clear the logs.</p>
   <form method="post" action="delete_table.php">
   <button type="submit" id="delete" class="btn btn-danger" class="delete" name="delete" value="Truncate" onclick="clear()">Clear logs</button>
+  <h2>Download Xampp</h2>
+  <a href="https://www.apachefriends.org/index.html" class="btn btn-primary">Download Xampp</a>
+  <h2>Github</h2>
+  <a href="https://github.com/bassmit12/projects/tree/main/meesterproef/files" class="btn btn-primary">Download Xampp</a>
   </form>
 </div>
 
