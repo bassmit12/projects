@@ -1,7 +1,7 @@
 #include <WiFiNINA.h>
 
-byte serv[] = {192, 168, 1, 119} ; //Enter the IPv4 address
-char ssid[] = "ASUS_Router";        // your network SSID (name)
+byte serv[] = {192, 168, 1, 230} ; //Enter the IPv4 address from the PC
+char ssid[] = "ASUS_EC";        // your network SSID (name)
 char pass[] = "yuM5KrkO4";    // your network password (use for WPA, or use as key for WEP)
 int status = WL_IDLE_STATUS;     // the Wifi radio's status
 
@@ -17,20 +17,23 @@ int sensorValue1 = 1023;
 int sensorValue2 = 1023;
 int sensorValue3 = 1023;
 
-int minimalHit = 990;
+int minimalHit = 360;
 
 void setup() {
 Serial.begin(9600); //setting the baud rate at 9600
-Serial.print("Attempting to connect to network: ");
+while (!Serial);
+
   // attempt to connect to Wifi network:
   while (status != WL_CONNECTED) {
-    Serial.print("Connected to the network: ");
+    Serial.print("Attempting to connect to network: ");
     Serial.println(ssid);
     // Connect to WPA/WPA2 network:
     status = WiFi.begin(ssid, pass);
 
     // wait 10 seconds for connection:
     delay(10000);
+
+    
   }
 
   // you're connected now, so print out the data:
@@ -65,9 +68,18 @@ String Adress = String ("POST ") + String("/ethernet/data.php") + String(PostDat
 if (client.connect(serv, 80) ==1 && (sensorValue0 < minimalHit || sensorValue1 < minimalHit || sensorValue2 < minimalHit || sensorValue3 < minimalHit)) { //Connecting at the IP address and port we saved before
 
   Serial.println("connected + hit");
-  
+  Serial.print("Value0: ");
+  Serial.println(sensorValue0);
+  Serial.print("Value1: ");
+  Serial.println(sensorValue1);
+  Serial.print("Value2: ");
+  Serial.println(sensorValue2);
+  Serial.print("Value3: ");
+  Serial.println(sensorValue3);
+  Serial.println("----------------------------------------");
+
   client.println(Adress);//Connecting and Sending values to database
-  client.println("Host: 192.168.1.119"); //CHANGE THIS
+  client.println("Host: 192.168.178.164");
   client.println("User-Agent: Arduino/1.0");
   client.println("Connection: close");
   client.print("Content-Length: ");
