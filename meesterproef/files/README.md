@@ -16,4 +16,4 @@ How to use the Arduino to update the Webserver
 12. Select the board option SAMD and choose arduino wifi mkr 1010
 13. Upload the code to the arduino via usb-micro cable (you can change the minimal hit value to make it more or less sensitive (lower minimal hit is less sensitive, minimalhit close or at 1100 is more sensitve)
 14. Open the Serial monitor and wait 10 seconds (Connection info should appear), you might have to change the port
-15. Punch the suit and you should see 'connected + hit' 
+15. Punch the suit and you should see 'connected + hit' + the values of all the 4 sensors. The lowest hit sensorValue should be lower then minimalhit (this makes changing the minimalhit value easy)
