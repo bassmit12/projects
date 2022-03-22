@@ -1,4 +1,4 @@
-## This document and the provided files were provided by Bas Smit 
+## This document and all the files were provided by Bas Smit 
 
 How to use the Arduino to update the Webserver
 
